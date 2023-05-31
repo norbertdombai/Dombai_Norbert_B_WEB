@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Tema extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['temanev'];
+
+    public function Tema()
+    {
+        return this->hasMany(Tema::class);
+    }
 }

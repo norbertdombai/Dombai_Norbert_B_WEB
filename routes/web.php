@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\TemaController;
 use App\Http\Controllers\SzavakController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,9 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::get('/export',[SzavakController::class, 'SzavakExportToJson']);
 
@@ -30,4 +27,6 @@ Route::post('/szavak/create', [SzavakController::class, 'create'])->name('szavak
 
 Route::delete('/delete/{id}', [SzavakController::class, 'deleteRow']);
 
+
+Route::get('/temaexport',[TemaController::class, 'TemaExportToJson']);
 
